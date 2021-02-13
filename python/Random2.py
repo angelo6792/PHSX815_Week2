@@ -68,3 +68,12 @@ class Random:
       X = -math.log(R)/beta
 
       return X
+
+# rayleigh distribution
+    def Rayleigh(self):
+        
+         R = self.rand()
+         
+         X = (-2*math.log(R))**(1/2)
+         
+         return X
