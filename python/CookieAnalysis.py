@@ -66,11 +66,11 @@ w = np.ones_like(times) / len(times)
 
 
 fig1 = plt.figure()
-quant = np.quantile(fig1, [0.05, 0.5, 0.95], axis=1)
+#quant = np.quantile(fig1, [0.05, 0.5, 0.95], axis=1)
 ax1 = fig1.add_subplot()
 ax1.hist(times, 50,  weights = w)
 ax1.set_yscale('log')
-ax1.set_xlabel('cookie stuff')
+ax1.set_xlabel('Time between missing cookies')
 ax1.set_ylabel('Probability')
 
 W = np.ones_like(times_avg) / len(times_avg)
@@ -79,8 +79,10 @@ fig2 = plt.figure()
 ax2 = fig2.add_subplot()
 ax2.hist(times_avg, 50, weights = W)
 ax2.set_yscale('log')
-ax2.set_xlabel('cookie stuff 2')
+ax2.set_xlabel('Average times')
 ax2.set_ylabel('Probability')
 
+fig1.savefig('time.png')
+fig2.savefig('average.png')
 plt.show()
 
